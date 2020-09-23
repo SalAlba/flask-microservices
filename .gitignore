@@ -131,3 +131,4 @@ dmypy.json
 # extra
 .logs
 *.sqllite3
+nohup.out

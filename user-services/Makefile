@@ -8,7 +8,7 @@ run-app:
 run-app-nohup:
 	clean; \
 	clear;
-	nohup python3 run_ann.py &
+	nohup python3 run_app.py &
 
 clean: clean-build clean-pyc clean-logs; clear
 
