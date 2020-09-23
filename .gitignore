@@ -130,3 +130,4 @@ dmypy.json
 
 # extra
 .logs
+*.sqllite3

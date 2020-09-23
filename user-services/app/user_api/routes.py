@@ -59,7 +59,7 @@ def get_user_by_id(_id):
     return response
 
 
-@user_api_blueprint.route('/api/user/create', methods=['POST'])
+@current_blueprint.route('/api/user/create', methods=['POST'])
 # @login_required
 # @loge # TODO ...
 def create_user():
