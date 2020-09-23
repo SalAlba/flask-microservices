@@ -15,6 +15,7 @@ def init_app(app):
         print('ERR ==> init_app() ', err)
         return None
 
+
 def create_tables(app):
     try:
         # ...
@@ -72,4 +73,3 @@ class User(db.Model):
             'api_key': self.api_key,
             'is_active': True
         }
-

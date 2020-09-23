@@ -1,3 +1,6 @@
+import json
+from passlib.hash import sha256_crypt
+
 from flask import jsonify, request, render_template
 # from flask_login import login_required
 
@@ -38,36 +41,39 @@ def get_users():
 # @login_required
 # @loge # TODO ...
 def get_user_by_id(_id):
-
-    item = User.query.filter_by(username=username).first()
+    item = User.query.filter_by(id=_id).first()
     if not item:
         response = jsonify(dict(
-            result=item,
             message={
-                'info': 'success',
-                'code': 201
+                'info': 'user not found',
+                'code': 404
             },
-        ))
+        )), 404
     else:
         response = jsonify(dict(
+            result=item.to_json(),
             message={
                 'info': 'success',
                 'code': 201
             }
-            )), 404
+        ))
 
     return response
 
 
-@current_blueprint.route('/api/user/create', methods=['POST'])
+@current_blueprint.route('/user/create', methods=['POST'])
 # @login_required
 # @loge # TODO ...
 def create_user():
-    first_name = request.get('first_name')
-    last_name = request.get('last_name')
-    email = request.get('email')
-    username = request.get('username')
-    password = sha256_crypt.hash((str(request.get('password'))))
+    # ...
+    data = request.get_json()
+    print('\n\ncreate_user()')
+    print(json.dumps(data, indent=4))
+    first_name = data.get('first_name')
+    last_name = data.get('last_name')
+    email = data.get('email')
+    username = data.get('username')
+    password = sha256_crypt.hash((str(data.get('password'))))
 
     # TODO move to controller ..
     user = User()

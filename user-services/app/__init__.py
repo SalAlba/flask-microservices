@@ -37,7 +37,8 @@ def init_db(app):
     app.config.update(dict(
         # SECRET_KEY="powerful secretkey",
         SQLALCHEMY_TRACK_MODIFICATIONS=False,
-        SQLALCHEMY_DATABASE_URI='sqlite:///db.sqllite3',
+        # SQLALCHEMY_DATABASE_URI='sqlite:///db.sqllite3',
+        SQLALCHEMY_DATABASE_URI='sqlite://///home/salem/WorkSpaces/python/flask-microservices/user-services/ada.sqllite3',
     ))
     models.init_app(app)
     models.create_tables(app)
