@@ -65,7 +65,7 @@ def product_by_slug(slug):
 def create_product():
     # ...
     data = request.get_json()
-    print('\n\ncreate_user()')
+    print('\n\ncreate_product()')
     print(json.dumps(data, indent=4))
     name = data.get('name')
     slug = data.get('slug')
