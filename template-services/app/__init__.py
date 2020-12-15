@@ -43,4 +43,5 @@ def init_db(app):
     models.create_tables(app)
 
 def app_config():
-    return app.config
+    pass
+    # return app.config
