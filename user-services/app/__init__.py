@@ -1,4 +1,3 @@
-
 from flask import Flask
 
 from flask_cors import CORS
@@ -19,7 +18,7 @@ def create_app():
         # ...
         # configure_app(app)
         # CORS(app)
-        init_db(app)
+        # init_db(app)
         register_modules(app)
         # register_extensions(app)
         # register_errorhandlers(app)
@@ -44,4 +43,5 @@ def init_db(app):
     models.create_tables(app)
 
 def app_config():
-    return app.config
+    pass
+    # return app.config
