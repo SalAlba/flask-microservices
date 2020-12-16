@@ -1,14 +1,14 @@
 
 run-app-user:
-	cd user-services; \
+	cd user-services;\
 	make run-app
 
 run-app-order:
-	cd order-services; \
+	cd order-services;\
 	make run-app
 
 run-app-product:
-	cd product-services; \
+	cd product-services;\
 	make run-app
 
 
@@ -19,11 +19,11 @@ run-all-apps:
 
 
 run-all-apps-nohup:
-	cd user-services; \
-	make run-app-nohup; \
-	cd ..; \
-	cd product-services; \
+	cd user-services;\
+	make run-app-nohup;\
+	cd ..;\
+	cd product-services;\
 	make run-app-nohup
-	cd ..; \
-	cd order-services; \
+	cd ..;\
+	cd order-services;\
 	make run-app-nohup;
