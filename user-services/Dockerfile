@@ -5,15 +5,13 @@ FROM python:3.6-alpine
 
 ENV ENV_VARIABLE_FROM_DOCKER "Hello, World!"
 
-RUN mkdir /app
-WORKDIR /app
+RUN mkdir /src
+COPY ../requirements.txt /src/requirements.txt
+COPY run_app.py /src/run_app.py
+COPY ./app /src/app
 
-COPY ./requirements.txt /app/requirements.txt
+WORKDIR /src
 RUN pip install -r requirements.txt
-
-COPY run_app.py run_app.py
-COPY ./app /app
-
 
 EXPOSE 2020
 ENTRYPOINT ["python"]
