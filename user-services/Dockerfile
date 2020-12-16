@@ -8,7 +8,7 @@ ENV ENV_VARIABLE_FROM_DOCKER "Hello, World!"
 RUN mkdir /app
 WORKDIR /app
 
-COPY requirements.txt /app/requirements.txt
+COPY ./requirements.txt /app/requirements.txt
 RUN pip install -r requirements.txt
 
 COPY run_app.py run_app.py
