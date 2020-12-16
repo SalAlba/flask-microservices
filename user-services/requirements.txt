@@ -1,0 +1,20 @@
+######################
+# Python 3.8.2
+######################
+
+# Web ...
+Flask
+coloredlogs
+requests
+# Werkzeug==0.16.1
+flask-cors
+
+# core ...
+PyYaml
+passlib # user password hasing
+
+# DB ...
+# pymongo==3.9.0
+Flask-SQLAlchemy
+# SQLAlchemy
+# mysql-connector
