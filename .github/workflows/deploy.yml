@@ -1,7 +1,9 @@
 name: Deploy into server
 on:
-  push: [deploy]
-  pull_request: [deploy]
+  push:
+    branches: [deploy]
+  pull_request:
+    branches: [deploy]
 
 jobs:
   build:
