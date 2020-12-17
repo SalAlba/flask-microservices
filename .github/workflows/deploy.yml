@@ -1,0 +1,22 @@
+name: Deploy into server
+on:
+  push:
+    branches: [deploy]
+  pull_request:
+    branches: [deploy]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.HOST_USERNAME }}
+          password: ${{ secrets.HOST_PASSWORD }}
+          port: ${{ secrets.HOST_PORT }}
+          script: |
+            whoami
+            ls -la
+            mkdir dada
